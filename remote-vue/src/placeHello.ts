@@ -1,8 +1,8 @@
 import { createApp } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import HomeView from "./views/HomeView.vue";
 
 export default function placeHello(el: any) {
-  createApp(HelloWorld).mount(el);
+  createApp(HomeView).mount(el);
 }
 
 // const mount = (el: any) => {

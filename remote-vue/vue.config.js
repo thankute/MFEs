@@ -15,21 +15,14 @@ module.exports = defineConfig({
     historyApiFallback: true,
   },
   configureWebpack: {
-    // module: {
-    //   rules: [
-    //     {
-    //       test: /\.vue$/,
-    //       loader: "vue-loader",
-    //     },
-    //   ],
-    // },
     plugins: [
-      new VueLoaderPlugin(),
+      // new VueLoaderPlugin(),
       new ModuleFederationPlugin({
         name: "vue_app",
         filename: "remoteEntry.js",
         exposes: {
           "./HelloWorld": "./src/placeHello.ts",
+          "./VueApp": "./src/bootstrap.ts",
         },
         shared: {
           ...deps,

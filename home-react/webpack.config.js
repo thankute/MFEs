@@ -17,7 +17,7 @@ module.exports = {
         extensions: ['.js', '.tsx', '.ts', '.vue', '.jsx'],
     },
     output: {
-        publicPath: 'auto',
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -34,6 +34,31 @@ module.exports = {
                     presets: ['@babel/preset-react', '@babel/preset-typescript'],
                 },
             },
+            {
+                test: /\.(gif|svg|jpg|png|jpeg)$/,
+                loader: "file-loader",
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                ],
+            }
         ],
     },
 
@@ -63,6 +88,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             template:
                 './public/index.html',
+            favicon: "./public/logo512.png",
+            filename: "index.html",
+            manifest: "./public/manifest.json"
         }),
         // new ProvidePlugin({
         //     "React": "react",

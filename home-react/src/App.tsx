@@ -1,26 +1,34 @@
 // import ReactButton from 'remoteReactApp/Button';
 
 import React from 'react';
-import HelloWorld from 'remoteVueApp/HelloWorld';
-import ReactButton from 'remoteReactApp/Button';
-import { useRef, useEffect } from 'react';
+import './common/assets/scss/styles.scss';
+import { BrowserRouter, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import IndexRoutes from './routes/Routes';
+import Login from './modules/login/Index';
+import Hello from './modules/Hello/Index';
+
 
 function App() {
+  // const vueRef = useRef(null);
 
-  const vueRef = useRef(null);
-
-  useEffect(() => {
-    HelloWorld(vueRef.current)
-  }, [])
+  // useEffect(() => {
+  //   mount(vueRef.current)
+  // }, [])
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/",
+        element: <div>Hello world!</div>,
+      },
+    ]
+  );
 
   return (
-    <div className="App">
-      Remote React
-      <div ref={vueRef}></div>
-      <React.Suspense fallback='Loading Button'>
-        <ReactButton />
-      </React.Suspense>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 

@@ -1,0 +1,44 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FAFAFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login_form {
+
+        input {
+            border-radius: 3px;
+            padding: 8px;
+        }
+        .ant-input:focus {
+            border-color: rgba(73, 73, 73,0.6);
+            box-shadow: none;
+        }
+
+        .ant-btn {
+            background-color: #82b6ff;
+        }
+
+        .ant-btn-primary:not(:disabled):hover {
+            background-color: #3f8fff;
+        }
+        .ant-divider-horizontal.ant-divider-with-text {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        h3 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+
+    .login_part {
+        padding: 10px 40px;
+        margin-bottom: 10px;
+        border: 1px solid rgb( 219, 219, 219);
+        border-radius: 1px;
+    }
+}
