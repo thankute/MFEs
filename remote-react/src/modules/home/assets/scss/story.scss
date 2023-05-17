@@ -1,0 +1,77 @@
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
+
+.story_container {
+    width: 100%;
+    padding-top: 42px;
+    background-color: black;
+    color: white;
+    position: relative;
+
+    .sli-container {
+        width: 100%;
+
+        .slick-track {
+            margin: 0;
+        }
+    }
+
+    .single {
+        display: flex!important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 14px;
+        color: white;
+        font-size: 12px;
+
+        img {
+            width: 64px; 
+            height: 64px;
+            object-fit: cover;
+            border-radius: 50%; 
+            background: linear-gradient(white, white) padding-box,linear-gradient(to right,#f9ce34, #fa7e1e, #ee2a7b, #962fbf ,) border-box;
+            border: 2px solid transparent;
+        }
+        p {
+            margin-top: 6px;
+        }
+    }
+
+    .btn {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 42%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            height: 12px;
+            fill: black;
+        }
+        
+    }
+
+    .prev {
+        left: 0;
+        transform: translateX(100%);
+        svg {
+            transform: rotate(-90deg);
+        }
+
+    }
+
+    .next {
+        right: 0;
+        transform: translateX(-100%);
+        svg {
+            transform: rotate(90deg);
+        }
+    }
+
+}

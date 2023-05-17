@@ -6,22 +6,28 @@ const deps = require('./package.json').dependencies;
 
 module.exports = {
     entry: path.resolve(__dirname, './src/index'),
+    target: 'web',
     mode: 'development',
     devServer: {
         port: 3001,
         headers: {
             "Access-Control-Allow-Origin": "*"
         },
-        hot: true
+        hot: false,
     },
     resolve: {
-        extensions: ['.js', '.tsx', '.ts'],
+        extensions: ['.js', '.tsx', '.ts', 'jsx', '.svg'],
     },
     output: {
-        publicPath: 'auto',
+        publicPath: '/',
     },
     module: {
         rules: [
+            {
+                test: /\.(js|ts)$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+            },
             {
                 test: /\.(js|ts)x?$/,
                 loader: 'babel-loader',
@@ -31,9 +37,50 @@ module.exports = {
                 },
             },
             {
-                test: /\.css$/i,
-                use: ['style-loader',
-                    'css-loader'],
+                test: /\.(gif|jpg|png|jpeg)$/,
+                loader: "file-loader",
+            },
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack', 'file-loader'],
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                sideEffects: true,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    }
+                ],
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                sideEffects: true,
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true,
+                        },
+                    },
+                ],
             },
         ],
     },
@@ -44,8 +91,9 @@ module.exports = {
                 filename:
                     'remoteEntry.js',
                 exposes: {
-                    './Button':
-                        './src/Button',
+                    './Button': './src/Button',
+                    './Sidebar': './src/common/layout/sidebar/Index',
+                    './Home': './src/modules/home/Index'
                 },
                 // remotes: {
                 //     MFE1: 'home_react@http://localhost:3001/remoteEntry.js',

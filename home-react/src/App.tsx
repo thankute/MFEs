@@ -5,7 +5,8 @@ import './common/assets/scss/styles.scss';
 import { BrowserRouter, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import IndexRoutes from './routes/Routes';
 import Login from './modules/login/Index';
-import Hello from './modules/Hello/Index';
+import NotFound from './modules/not-found/Index';
+import Sidebar from 'remoteReactApp/Sidebar';
 
 
 function App() {
@@ -17,12 +18,18 @@ function App() {
   const router = createBrowserRouter(
     [
       {
-        path: "/login",
+        path: "/",
         element: <Login />,
       },
       {
-        path: "/",
-        element: <div>Hello world!</div>,
+        path: "/a",
+        element: <React.Suspense fallback='Loading Button'>
+          <Sidebar />
+        </React.Suspense>,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ]
   );

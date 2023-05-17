@@ -1,0 +1,35 @@
+.sidebar {
+    height: 100vh;
+    color: white;
+    background-color: #000;
+    border-right: 1px solid rgba($color: #fff, $alpha: 0.1);
+
+
+    .ant-menu {
+        padding: 0 8px;
+        background-color: black;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        
+        .ant-menu-item-selected {
+            color: white !important;
+            background-color: rgba($color: #fff, $alpha: 0.1) !important;
+        }
+
+        .ant-menu-item {
+            padding: 24px 12px!important;
+
+            &:hover {
+                color: white !important;
+                background-color: rgba($color: #fff, $alpha: 0.1) !important;
+            }
+        }
+        
+        .ant-menu-title-content {
+            margin-left: 18px!important;
+        }
+    }
+
+}

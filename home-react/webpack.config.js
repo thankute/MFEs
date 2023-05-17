@@ -11,7 +11,7 @@ module.exports = {
         headers: {
             "Access-Control-Allow-Origin": "*"
         },
-        hot: true
+        historyApiFallback: true,
     },
     resolve: {
         extensions: ['.js', '.tsx', '.ts', '.vue', '.jsx'],
