@@ -16,10 +16,10 @@ module.exports = {
         hot: false,
     },
     resolve: {
-        extensions: ['.js', '.tsx', '.ts', 'jsx', '.svg'],
+        extensions: ['.js', '.tsx', '.ts', '.jsx', '.svg'],
     },
     output: {
-        publicPath: '/',
+        publicPath: 'auto',
     },
     module: {
         rules: [
@@ -48,17 +48,7 @@ module.exports = {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 sideEffects: true,
-                use: [
-                    {
-                        loader: 'style-loader',
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    }
-                ],
+                use: ['css-loader', 'style-loader'],
             },
             {
                 test: /\.scss$/,
@@ -93,7 +83,8 @@ module.exports = {
                 exposes: {
                     './Button': './src/Button',
                     './Sidebar': './src/common/layout/sidebar/Index',
-                    './Home': './src/modules/home/Index'
+                    './Home': './src/modules/home/Index',
+                    './App': "./src/App.tsx",
                 },
                 // remotes: {
                 //     MFE1: 'home_react@http://localhost:3001/remoteEntry.js',

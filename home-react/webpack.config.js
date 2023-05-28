@@ -11,10 +11,11 @@ module.exports = {
         headers: {
             "Access-Control-Allow-Origin": "*"
         },
+        hot: false,
         historyApiFallback: true,
     },
     resolve: {
-        extensions: ['.js', '.tsx', '.ts', '.vue', '.jsx'],
+        extensions: ['.js', '.tsx', '.ts', '.vue', '.jsx', '.svg'],
     },
     output: {
         publicPath: '/',
@@ -35,8 +36,18 @@ module.exports = {
                 },
             },
             {
-                test: /\.(gif|svg|jpg|png|jpeg)$/,
+                test: /\.(gif|jpg|png|jpeg)$/,
                 loader: "file-loader",
+            },
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack', 'file-loader'],
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                sideEffects: true,
+                use: ['css-loader', 'style-loader'],
             },
             {
                 test: /\.scss$/,
