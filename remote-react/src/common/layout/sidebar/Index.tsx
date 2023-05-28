@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Row, } from 'antd';
+import { Col, Menu, Row, } from 'antd';
 import Logo from '../../../assets/image/svgexport-1.svg';
 import { ReactComponent as Home } from '../../../assets/image/svgexport-2.svg';
 import { ReactComponent as Search } from '../../../assets/image/svgexport-3.svg';
@@ -63,23 +63,22 @@ const Sidebar = () => {
             <Row style={{ padding: '40px 24px 32px 24px' }}>
                 <img src={Logo} alt="logo" />
             </Row>
-            <Row>
+            <Row >
                 <Menu
                     mode="inline"
                     items={items}
                 />
             </Row>
-            <Row>
-                <Menu
-                    style={{ marginTop: 64 }}
-                    mode="inline"
-                    items={[{
-                        label: "More",
-                        key: "More",
-                        icon: <More />
-                    },]}
-                />
-            </Row>
+            <Menu
+                className='more'
+                style={{ marginTop: 64 }}
+                mode="inline"
+                items={[{
+                    label: "More",
+                    key: "More",
+                    icon: <More />
+                },]}
+            />
         </div>
     )
 }

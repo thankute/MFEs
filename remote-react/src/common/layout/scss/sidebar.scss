@@ -3,7 +3,7 @@
     color: white;
     background-color: #000;
     border-right: 1px solid rgba($color: #fff, $alpha: 0.1);
-
+    position: relative;
 
     .ant-menu {
         padding: 0 8px;
@@ -30,6 +30,12 @@
         .ant-menu-title-content {
             margin-left: 18px!important;
         }
+    }
+
+
+    .more {
+        position: absolute;
+        bottom: 32px;
     }
 
 }

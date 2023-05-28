@@ -6,7 +6,10 @@ import { BrowserRouter, Route, RouterProvider, createBrowserRouter, createRoutes
 import IndexRoutes from './routes/Routes';
 import Login from './modules/login/Index';
 import NotFound from './modules/not-found/Index';
-import Sidebar from 'remoteReactApp/Sidebar';
+// import Sidebar from 'remoteReactApp/Sidebar';
+// import Button from 'remoteReactApp/Button';
+import RemoteHome from 'remoteReactApp/Home';
+import PageLayout from './common/layout/Layout';
 
 
 function App() {
@@ -18,14 +21,26 @@ function App() {
   const router = createBrowserRouter(
     [
       {
-        path: "/",
+        path: "/login",
         element: <Login />,
       },
       {
-        path: "/a",
-        element: <React.Suspense fallback='Loading Button'>
-          <Sidebar />
-        </React.Suspense>,
+        path: "/",
+        element: <PageLayout />,
+        children: [
+          {
+            path: "",
+            element: <div>
+              <React.Suspense fallback='Loading App'>
+                <RemoteHome />
+              </React.Suspense>
+            </div>,
+          },
+          {
+            path: "test",
+            element: <div>Test</div>
+          }
+        ]
       },
       {
         path: "*",

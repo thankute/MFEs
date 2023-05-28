@@ -8,7 +8,7 @@ const UserSuggest = () => {
         <div className='user_suggest'>
             <Row align="middle" justify="space-between" className='user-info'>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={Avatar} alt="ava" style={{ width: 60, height: 60, borderRadius: '50%', objectFit: 'contain' }} />
+                    <img src={Avatar} alt="ava" style={{ width: 50, height: 50, borderRadius: '50%', objectFit: 'contain' }} />
                     <div style={{ marginLeft: 10 }}>
                         <h4>thanhcutephomaique</h4>
                         Pham Thanh
@@ -27,7 +27,7 @@ const UserSuggest = () => {
                 </div>
                 <Row align="middle" justify="space-between" style={{ width: '100%', marginTop: 20 }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <img src={Avatar} alt="ava" style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'contain' }} />
+                        <img src={Avatar} alt="ava" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'contain' }} />
                         <div style={{ marginLeft: 10 }}>
                             <h4>betterhuydapoez</h4>
                             <p> Suggested for you</p>
@@ -40,7 +40,7 @@ const UserSuggest = () => {
 
                 <Row align="middle" justify="space-between" style={{ width: '100%', marginTop: 20 }} >
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <img src={Avatar} alt="ava" style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'contain' }} />
+                        <img src={Avatar} alt="ava" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'contain' }} />
                         <div style={{ marginLeft: 10 }}>
                             <h4>kemkem.ngankhanh</h4>
                             <p> Followed by _phganhhhhh</p>
@@ -53,11 +53,10 @@ const UserSuggest = () => {
 
                 <Row align="middle" justify="space-between" style={{ width: '100%', marginTop: 20 }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <img src={Avatar} alt="ava" style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'contain' }} />
+                        <img src={Avatar} alt="ava" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'contain' }} />
                         <div style={{ marginLeft: 10 }}>
                             <h4>pamperthepeace.02</h4>
                             <p> Followed by febrhuy.15 + 03 more</p>
-
                         </div>
                     </div>
                     <div style={{ color: 'rgb(0, 149, 246)', fontSize: 12 }}>

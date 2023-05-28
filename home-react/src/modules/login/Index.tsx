@@ -13,8 +13,8 @@ const Login = () => {
     return (
         <div className='container'>
             <Row>
-                <Col span={12} style={{ display: 'flex', justifyContent: "right" }}>
-                    <img src={InstaPhone} alt="instagram" style={{ width: '65%' }} />
+                <Col span={12} style={{ display: 'flex', justifyContent: "right", }}>
+                    <img src={InstaPhone} alt="instagram" style={{ width: '65%', maxWidth: 500 }} />
                 </Col>
                 <Col span={7} className='login_form'>
                     <Row justify="center" align="middle" className='login_part'>
