@@ -10,6 +10,7 @@ import NotFound from './modules/not-found/Index';
 // import Button from 'remoteReactApp/Button';
 import RemoteHome from 'remoteReactApp/Home';
 import PageLayout from './common/layout/Layout';
+import RemoteVue from './modules/vue/Index';
 
 
 function App() {
@@ -37,8 +38,10 @@ function App() {
             </div>,
           },
           {
-            path: "test",
-            element: <div>Test</div>
+            path: "vue",
+            element: <div>
+              <RemoteVue />
+            </div>
           }
         ]
       },
