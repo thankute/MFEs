@@ -14,49 +14,62 @@ import Avatar from '../../../assets/image/avatar.jpg';
 
 import '../scss/sidebar.scss';
 import { MenuItemType } from 'antd/es/menu/hooks/useItems';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
+    const navigate = useNavigate();
+
     const items: MenuItemType[] = [
         {
             label: "Home",
             key: "home",
-            icon: <Home />
+            icon: <Home />,
+            onClick: () => navigate("/")
         },
         {
             label: "Search",
             key: "Search",
-            icon: <Search />
+            icon: <Search />,
+            onClick: () => navigate("/search")
         },
         {
             label: "Explore",
             key: "Explore",
-            icon: <Explore />
+            icon: <Explore />,
+            onClick: () => navigate("/explore")
         },
         {
             label: "Reel",
             key: "Reel",
-            icon: <Reel />
+            icon: <Reel />,
+            onClick: () => navigate("/reels")
         },
         {
             label: "Message",
             key: "Message",
-            icon: <Message />
+            icon: <Message />,
+            onClick: () => navigate("/message")
         },
         {
-            label: "Heart",
+            label: "Notifications",
             key: "Heart",
             icon: <Heart />
         },
         {
             label: "Create",
             key: "Create",
-            icon: <Create />
+            icon: <Create />,
         },
         {
             label: "Profile",
             key: "Profile",
             icon: <img src={Avatar} alt='avatar' style={{ width: 28, height: 28, borderRadius: '50%', objectFit: 'cover' }} />
         },
+        {
+            label: "More",
+            key: "More",
+            icon: <More />
+        }
     ]
     return (
         <div className='sidebar'>
@@ -69,7 +82,7 @@ const Sidebar = () => {
                     items={items}
                 />
             </Row>
-            <Menu
+            {/* <Menu
                 className='more'
                 style={{ marginTop: 64 }}
                 mode="inline"
@@ -78,7 +91,7 @@ const Sidebar = () => {
                     key: "More",
                     icon: <More />
                 },]}
-            />
+            /> */}
         </div>
     )
 }

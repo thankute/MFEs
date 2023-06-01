@@ -16,9 +16,10 @@ function App() {
     return (
         <div className="App">
             Remote React
-            <div ref={vueRef}></div>
+            <div ref={vueRef}></div>            {/* vue remote*/}
+
             <React.Suspense fallback='Loading Button'>
-                <ReactButton />
+                <ReactButton />                 {/* react remote */}
             </React.Suspense>
         </div>
     );

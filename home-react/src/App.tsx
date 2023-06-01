@@ -2,56 +2,10 @@
 
 import React from 'react';
 import './common/assets/scss/styles.scss';
-import { BrowserRouter, Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
-import IndexRoutes from './routes/Routes';
-import Login from './modules/login/Index';
-import NotFound from './modules/not-found/Index';
-// import Sidebar from 'remoteReactApp/Sidebar';
-// import Button from 'remoteReactApp/Button';
-import RemoteHome from 'remoteReactApp/Home';
-import PageLayout from './common/layout/Layout';
-import RemoteVue from './modules/vue/Index';
-
+import { RouterProvider } from "react-router-dom";
+import { router } from './routes/Routes';
 
 function App() {
-  // const vueRef = useRef(null);
-
-  // useEffect(() => {
-  //   mount(vueRef.current)
-  // }, [])
-  const router = createBrowserRouter(
-    [
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/",
-        element: <PageLayout />,
-        children: [
-          {
-            path: "",
-            element: <div>
-              <React.Suspense fallback='Loading App'>
-                <RemoteHome />
-              </React.Suspense>
-            </div>,
-          },
-          {
-            path: "vue",
-            element: <div>
-              <RemoteVue />
-            </div>
-          }
-        ]
-      },
-      {
-        path: "*",
-        element: <NotFound />,
-      },
-    ]
-  );
-
   return (
     <RouterProvider router={router} />
   );

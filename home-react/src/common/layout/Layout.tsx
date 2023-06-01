@@ -8,7 +8,7 @@ import { Outlet } from "react-router-dom";
 const PageLayout = () => {
     return (
         <Layout style={{ minHeight: '100vh' }} hasSider>
-            <Col span={4}>
+            <Col span={4} style={{ minWidth: 245 }}>
                 <Sidebar />
             </Col>
 
